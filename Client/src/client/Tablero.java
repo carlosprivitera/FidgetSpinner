@@ -59,12 +59,13 @@ public class Tablero extends JPanel {
     }
 
     public void paint(Graphics g) {
-        super.paint(g);
+         super.paint(g);
         g2d = (Graphics2D)g;
         g2d.translate(xCentro, yCentro);
         //g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.rotate(Globales.giro); //(0 < giro < (2*PI)) * K_incremento
         g2d.drawImage(fs03, -xCentro, -yCentro, ancho, alto, null);
+        miRepaint();
     }
 
     private void miRepaint() {
@@ -73,10 +74,11 @@ public class Tablero extends JPanel {
 
     public void update(Graphics g) {
         // super.update(g);
-        return; //anular el método update(...)
+        return; //anular el mï¿½todo update(...)
     }
 
     private void jbInit() throws Exception {
         this.setSize(new Dimension(400, 400));
+        this.setOpaque(false);
     }
 }

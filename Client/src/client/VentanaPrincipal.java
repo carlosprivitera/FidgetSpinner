@@ -1,5 +1,7 @@
 package client;
 
+//import com.sun.awt.AWTUtilities;
+
 import com.sun.awt.AWTUtilities;
 
 import java.awt.BorderLayout;
@@ -61,8 +63,8 @@ public class VentanaPrincipal extends JFrame {
     private void jbInit() throws Exception {
         
         this.getContentPane().setLayout(null);
-        this.setSize(new Dimension(423, 497));
-        this.setTitle("Fidget Spinner - Juguete antiestrés");
+        this.setSize(new Dimension(486, 528));
+        this.setTitle("Fidget Spinner - Juguete antiestrï¿½s");
         this.setResizable(false);
         this.addWindowListener(new WindowAdapter() {
                 public void windowIconified(WindowEvent e) {
@@ -73,13 +75,18 @@ public class VentanaPrincipal extends JFrame {
                     this_windowDeiconified(e);
                 }
             });
+        //jToolBar1.setSize(new Dimension(400, 437));
+        tablero.setOpaque(true);
+        jToolBar1.setSize(new Dimension(467, 209));
+        //jToolBar1.setLayout(null);
+       // jToolBar1.setSize(new Dimension(400, 293));
         tablero.setBounds(new Rectangle(5, 45, 400, 410));
         tablero.setSize(new Dimension(400, 400));
         tablero.setLayout(null);
-        tablero.setOpaque(false);
+        //tablero.setOpaque(false);
         jToolBar1.setBounds(new Rectangle(0, 0, 420, 40));
-        jToolBar1.setRollover(true);
-        jToolBar1.setFloatable(false);
+       // jToolBar1.setRollover(true);
+        //jToolBar1.setFloatable(false);
         jButton1.setText("Parar");
         jButton1.setToolTipText("Detener giro");
         jButton1.addActionListener(new ActionListener() {
@@ -168,8 +175,9 @@ public class VentanaPrincipal extends JFrame {
                 }
             });
         tablero.setAltoAncho(400, 400);
-        this.setUndecorated(true);
-        AWTUtilities.setWindowOpaque(this, false); //setWindowOpacity (this,0.5f); 
+       // this.setUndecorated(true);
+     //   AWTUtilities.setWindowOpaque(this, false); //setWindowOpacity (this,0.5f); 
+    
         reloj.start();
         tablero.LanzarJuego(jLabel2);
         tablero.repaint();
